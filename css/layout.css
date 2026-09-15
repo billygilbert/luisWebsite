@@ -45,8 +45,9 @@ html, body {
 
 .subheadertitle {
 	position:absolute;
-	top:90px;
-	left:319px;
+	top:100px;
+	left:120px;
+	width:662px;
 	text-align:center;
 }
 
@@ -134,6 +135,16 @@ h1 {
 h2 {
 	font-family: "ltc-bodoni-175", serif;
 	font-size:20pt;
+	font-weight:400;
+	text-transform:uppercase;
+	letter-spacing:15px;
+	color:#000000;
+}
+
+	
+h3 {
+	font-family: "ltc-bodoni-175", serif;
+	font-size:13pt;
 	font-weight:400;
 	text-transform:uppercase;
 	letter-spacing:15px;
