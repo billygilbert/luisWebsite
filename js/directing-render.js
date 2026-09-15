@@ -13,11 +13,17 @@
 		return window.DIRECTING_PRODUCTIONS || [];
 	}
 
-	function imageUrl(production, filename) {
+	function imageUrl(production, filename, size) {
 		if (!filename) {
 			return '';
 		}
-		return IMAGE_ROOT + production.folder + '/' + encodeURIComponent(filename);
+		var extra = '';
+		if (size === 'thumb') {
+			extra = 'thumbs/';
+		} else if (size === 'large') {
+			extra = 'large/';
+		}
+		return IMAGE_ROOT + production.folder + '/' + extra + encodeURIComponent(filename);
 	}
 
 	function caption(production) {
@@ -78,7 +84,7 @@
 	}
 
 	function heroEl(production, sizeClass) {
-		var src = imageUrl(production, production.hero);
+		var src = imageUrl(production, production.hero, 'thumb');
 		var $wrap = $('<div></div>').addClass(sizeClass || 'production-hero');
 		if (!src) {
 			$wrap.addClass('production-hero-empty').text(production.title);
@@ -86,7 +92,8 @@
 		}
 		return $wrap.append($('<img>').attr({
 			src: src,
-			alt: production.title
+			alt: production.title,
+			decoding: 'async'
 		}));
 	}
 
@@ -97,23 +104,25 @@
 		}
 		var $row = $('<div class="production-thumbs"></div>');
 		for (var i = 0; i < images.length; i++) {
-			var src = imageUrl(production, images[i]);
+			var thumb = imageUrl(production, images[i], 'thumb');
+			var large = imageUrl(production, images[i], 'large');
 			var $img = $('<img>').attr({
 				width: 90,
 				height: 90,
-				alt: production.title
+				alt: production.title,
+				decoding: 'async'
 			});
 			if (lazy) {
-				$img.addClass('js-prefetch-img').attr('data-src', src);
+				$img.addClass('js-prefetch-img').attr('data-src', thumb);
 			} else {
-				$img.attr('src', src);
+				$img.attr('src', thumb);
 			}
 			if (i === images.length - 1) {
 				$img.addClass('last');
 			}
 			$('<a></a>').attr({
 				rel: group,
-				href: src,
+				href: large,
 				title: caption(production)
 			}).append($img).appendTo($row);
 		}
@@ -144,12 +153,22 @@
 			images = [].concat(production.hero ? [production.hero] : [], production.images || []);
 			for (j = 0; j < images.length; j++) {
 				filename = images[j];
-				url = imageUrl(production, filename);
-				if (!url || seen[url]) {
-					continue;
+				url = imageUrl(production, filename, 'thumb');
+				if (url && !seen[url]) {
+					seen[url] = true;
+					queue.push(url);
 				}
-				seen[url] = true;
-				queue.push(url);
+			}
+		}
+		for (i = 0; i < list.length; i++) {
+			production = list[i];
+			images = production.images || [];
+			for (j = 0; j < images.length; j++) {
+				url = imageUrl(production, images[j], 'large');
+				if (url && !seen[url]) {
+					seen[url] = true;
+					queue.push(url);
+				}
 			}
 		}
 
@@ -222,7 +241,7 @@
 		$overlay.find('.directing-modal-credits').hide();
 		$overlay.find('.directing-modal-viewer').show();
 		$overlay.find('.directing-modal-viewer-img').attr({
-			src: imageUrl(production, images[index]),
+			src: imageUrl(production, images[index], 'large'),
 			alt: production.title
 		});
 		$overlay.find('.directing-modal-viewer-meta').text((index + 1) + ' / ' + images.length + (production.photoCredit ? ' — ' + production.photoCredit : ''));

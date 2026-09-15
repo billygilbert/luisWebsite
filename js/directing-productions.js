@@ -1,7 +1,9 @@
 /* Edit this file to add or update stage directing productions.
    1. Add a new object at the top of DIRECTING_PRODUCTIONS (newest first).
-   2. Put photos in images/directing_page/<folder>/.
-   3. List filenames in hero and images. No HTML changes needed. */
+   2. Put full-size photos in images/directing_page/<folder>/.
+   3. List filenames in hero and images.
+   4. Run: bash scripts/make-directing-thumbs.sh
+      (creates thumbs/ for the page and large/ for the lightbox). */
 window.DIRECTING_PRODUCTIONS = [
 	{
 		id: 'sweeney-todd',
