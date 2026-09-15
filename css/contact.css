@@ -1,0 +1,311 @@
+@charset "UTF-8";
+/* CSS Document */
+
+* {
+	margin: 0;
+}
+html, body {
+	height: 100%;
+	background-color:#FFF;
+	background-image:url(../images/textured_trim.png);
+	background-repeat:repeat-x;
+}
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -100px; /* the bottom margin is the negative value of the footer's height */
+	position: relative;
+	width: 900px;
+}
+.footer, .push {
+	height: 200px; /* .push must be the same height as .footer */
+	
+}
+
+.header {
+	height: 200px;
+	background: url(header.png) no-repeat;
+}
+
+
+/*----HEADER STRUCTURE----*/
+
+.nametitle {
+	position:absolute;
+	left:160px;
+	top:18px;
+	width: 626px;
+}
+
+.nametitle A:link {text-decoration:none;}
+		footertext A:visited {text-decoration:none;}
+		footertext A:active {text-decoration:none;}
+		footertext A:hover {text-decoration:none;}
+
+.subheadertitle {
+	position:absolute;
+	top:90px;
+	left:319px;
+	text-align:center;
+}
+
+.navsep1 {
+	background-color:#BCBEC0;
+	width:523px;
+	height:1px;
+	position:absolute;
+	top:147px;
+	left:178px;
+}
+
+.navsep2 {
+	background-color:#BCBEC0;
+	width:523px;
+	height:1px;
+	position:absolute;
+	top:178px;
+	left:178px;
+}
+
+.nav1 {
+	position:absolute;
+	left:178px;
+	top:153px;
+	text-align:center;
+}
+
+
+.nav2 {
+	position:absolute;
+	left:250px;
+	top:153px;
+	text-align:center;
+}
+
+.nav3 {
+	position:absolute;
+	left:324px;
+	top:153px;
+	text-align:center;
+}
+
+.nav4 {
+	position:absolute;
+	left:410px;
+	top:153px;
+	text-align:center;
+}
+
+.nav5 {
+	position:absolute;
+	left:493px;
+	top:153px;
+	text-align:center;
+}
+
+.nav6 {
+	position:absolute;
+	left:633px;
+	top:153px;
+	text-align:center;
+}
+
+/*----END HEADER STRUCTURE----*/
+
+/*----STYLE----*/
+
+h1 {
+	font-family: "ltc-bodoni-175", serif;
+	font-size:45pt;
+	font-weight:400;
+	color:#000000;
+	margin:0;
+	padding:0;
+}
+	
+	
+h2 {
+	font-family: "ltc-bodoni-175", serif;
+	font-size:20pt;
+	font-weight:400;
+	text-transform:uppercase;
+	letter-spacing:15px;
+	color:#000000;
+}
+
+h2.global {
+	letter-spacing: 0.5px !important
+}
+
+nav {
+	font-family: "futura-pt", serif;
+	font-size:11pt;
+	font-weight:400;
+	color:#000000;
+	text-transform:uppercase;
+}
+
+nav A:link {color:#000; font-weight:400; text-decoration:none;}
+	nav A:visited {color:#000; font-weight:400; text-decoration:none;}
+	nav A:active {color:#000; font-weight:400; text-decoration:underline;}
+	nav A:hover { color:#000; font-weight:400; text-decoration:underline;}
+	
+#email A:link {color:#000; font-weight:400; text-decoration:none;}
+	nav A:visited {color:#000; font-weight:400; text-decoration:none;}
+	nav A:active {color:#000; font-weight:400; text-decoration:underline;}
+	nav A:hover { color:#000; font-weight:400; text-decoration:underline;}
+	
+/*----END STYLE----*/
+
+/*----CONTENT----*/
+
+.contactpicture {
+
+	width: 294px;
+	height:405px;
+	background-image:url(../images/contact/contact_new.jpg);
+	background-repeat: no-repeat;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+
+}
+
+
+#name {
+font-family: "ltc-bodoni-175", serif;
+	font-size:22pt;
+	font-weight:400;
+	color:#000000;
+	text-transform:uppercase;
+}
+
+#voice {
+font-family: "ltc-bodoni-175", serif;
+	font-size:18pt;
+	font-weight:400;
+	color:#000000;
+}
+
+#description {
+font-family: "futura-pt", serif;
+	font-size:12pt;
+	font-weight:400;
+	color:#000000;
+}
+
+#description A:link {color:#000; font-weight:400; text-decoration:none;}
+#description A:visited {color:#000; font-weight:400; text-decoration:none;}
+	#description A:active {color:#000; font-weight:400; text-decoration:underline;}
+	#description A:hover { color:#000; font-weight:400; text-decoration:underline;}
+
+
+#downloadresume {
+	text-decoration:none;
+}
+
+
+/*----SLIDESHOW CSS BELOW----*/
+
+/* ---------------------------------------------------- */
+/* SLIDESHOW
+/* ---------------------------------------------------- */
+#slideshow {
+width: 680px;
+background-color: #fff;
+}
+
+#slideshow ul {
+margin: 0;
+padding: 0;
+list-style-type: none;
+height: 1%; /* IE fix */}
+
+#slideshow ul:after {
+content: ".";
+clear: both;
+display: block;
+height: 0;
+visibility: hidden;}            
+
+/* ---------------------------------------------------- */
+/* SLIDESHOW > SLIDES
+/* ---------------------------------------------------- */
+#slideshow .slides {
+overflow: hidden;
+width: 680px;
+height:100px;
+font-family: "futura-pt",sans-serif;
+font-size:14pt;
+font-style:italic;
+}
+
+#slideshow .slides ul {
+width: 2040px;}
+
+#slideshow .slides li {
+width: 680px;
+float: left;
+/*padding: 20px;*/}
+
+#slideshow .slides h2 {
+margin-top: 0;}
+
+/* ---------------------------------------------------- */
+/* SLIDESHOW > NAVIGATION
+/* ---------------------------------------------------- */
+#slideshow .slides-nav {
+background-color: #ddd;
+border-top: 2px solid #ccc;}
+
+#slideshow .slides-nav li {
+float: left;}
+
+#slideshow .slides-nav li a {
+display: block;
+padding: 15px 20px;
+outline: none;}
+
+.js #slideshow .slides-nav li.on,
+.js #slideshow .slides-nav li.on a {
+background-color: #eee;}
+
+.js #slideshow .slides-nav li.on a {
+position: relative;
+top: -4px;}
+
+/*----END CONTAINER----*/
+
+/*----FOOTER----*/
+
+.footer {
+	position: relative;
+	width: 900px;
+	margin: 0 auto;
+	text-align:right;
+	font-family: "futura-pt", serif;font-size:10pt;
+	font-weight:500;
+	color:#000000;
+}
+
+.footertrim {
+	background-color:#000;
+	width:210px;
+	height:1px;
+	vertical-align:top;
+}
+
+	#footertext {
+font-family: "futura-pt", serif;
+	font-size:10pt;
+	font-weight:400;
+	color:#000000;
+}
+
+#footertext A:link {color:#000; font-weight:400; text-decoration:none;}
+#footertext A:visited {color:#000; font-weight:400; text-decoration:none;}
+	#footertext A:active {color:#000; font-weight:400; text-decoration:underline;}
+	#footertext A:hover { color:#000; font-weight:400; text-decoration:underline;}
+
+/*----END FOOTER----*/

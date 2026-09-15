@@ -1,0 +1,26 @@
+
+
+p {
+	margin: 0;
+	padding: 7px 0;
+}
+
+a {
+	outline: none;
+}
+
+a img {
+	border: 1px solid #BBB;
+	padding: 2px;
+	margin: 10px 20px 10px 0;
+	vertical-align: top;
+}
+
+a img.last {
+	margin-right: 0;	
+}
+
+ul {
+	margin-bottom: 24px;
+	padding-left: 30px;
+}

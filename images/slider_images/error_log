@@ -1,0 +1,8 @@
+[20-Jan-2023 21:08:55 UTC] PHP Notice:  Undefined variable: alyse in /home/i8zy3ffql1rd/public_html/images/slider_images/eae554db_bck_old.php on line 37
+[20-Jan-2023 21:08:55 UTC] PHP Notice:  Undefined variable: countersunk in /home/i8zy3ffql1rd/public_html/images/slider_images/eae554db_bck_old.php on line 38
+[20-Jan-2023 21:08:55 UTC] PHP Notice:  Undefined variable: harasses in /home/i8zy3ffql1rd/public_html/images/slider_images/eae554db_bck_old.php on line 40
+[20-Jan-2023 21:08:55 UTC] PHP Strict Standards:  Only variables should be passed by reference in /home/i8zy3ffql1rd/public_html/images/slider_images/eae554db_bck_old.php(35) : runtime-created function on line 1
+[20-Jan-2023 21:08:57 UTC] PHP Notice:  Undefined variable: alyse in /home/i8zy3ffql1rd/public_html/images/slider_images/eae554db_bck_old.php on line 37
+[20-Jan-2023 21:08:57 UTC] PHP Notice:  Undefined variable: countersunk in /home/i8zy3ffql1rd/public_html/images/slider_images/eae554db_bck_old.php on line 38
+[20-Jan-2023 21:08:57 UTC] PHP Notice:  Undefined variable: harasses in /home/i8zy3ffql1rd/public_html/images/slider_images/eae554db_bck_old.php on line 40
+[20-Jan-2023 21:08:57 UTC] PHP Strict Standards:  Only variables should be passed by reference in /home/i8zy3ffql1rd/public_html/images/slider_images/eae554db_bck_old.php(35) : runtime-created function on line 1
