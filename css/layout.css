@@ -25,7 +25,7 @@ html, body {
 
 .header {
 	height: 200px;
-	background: url(header.png) no-repeat;
+	background: none;
 }
 
 
