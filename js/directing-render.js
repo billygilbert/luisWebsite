@@ -50,16 +50,12 @@
 		return null;
 	}
 
-	function layoutSwitcher(active) {
-		return $(
-			'<nav class="layout-switcher">' +
-				'<a href="directing.html"' + (active === 'full' ? ' class="is-active"' : '') + '>Layout A — Full page</a>' +
-				'<span> / </span>' +
-				'<a href="directing-index.html"' + (active === 'index' || active === 'detail' ? ' class="is-active"' : '') + '>Layout B — Index</a>' +
-				'<span> / </span>' +
-				'<a href="directing-popover.html"' + (active === 'popover' ? ' class="is-active"' : '') + '>Layout C — Popover</a>' +
-			'</nav>'
-		);
+	function directingIndexPage() {
+		return window.DIRECTING_INDEX_PAGE || 'archive/directing-index.html';
+	}
+
+	function directingDetailPage() {
+		return window.DIRECTING_DETAIL_PAGE || 'archive/directing-detail.html';
 	}
 
 	function creditList(production) {
@@ -335,7 +331,7 @@
 	}
 
 	function renderFull($root) {
-		$root.empty().append(layoutSwitcher('full'));
+		$root.empty();
 		var list = productions();
 		for (var i = 0; i < list.length; i++) {
 			var production = list[i];
@@ -351,12 +347,12 @@
 	}
 
 	function renderIndex($root) {
-		$root.empty().append(layoutSwitcher('index'));
+		$root.empty();
 		var $grid = $('<div class="directing-index-grid"></div>');
 		var list = productions();
 		for (var i = 0; i < list.length; i++) {
 			var production = list[i];
-			var href = 'directing-detail.html?id=' + encodeURIComponent(production.id);
+			var href = directingDetailPage() + '?id=' + encodeURIComponent(production.id);
 			var $card = $('<a class="directing-card"></a>').attr('href', href)
 				.append(heroEl(production, 'directing-card-hero'))
 				.append($('<div class="operatitle"></div>').text(production.title))
@@ -369,12 +365,12 @@
 	function renderDetail($root) {
 		var production = findProduction(queryId());
 		if (!production) {
-			window.location.replace('directing-index.html');
+			window.location.replace(directingIndexPage());
 			return;
 		}
-		$root.empty().append(layoutSwitcher('detail'));
+		$root.empty();
 		$root.append($('<p class="directing-back"></p>').append(
-			$('<a href="directing-index.html"></a>').text('← All productions')
+			$('<a></a>').attr('href', directingIndexPage()).text('← All productions')
 		));
 		var group = 'gallery_' + production.id;
 		var $block = $('<section class="production-block production-detail"></section>');
@@ -387,7 +383,7 @@
 	}
 
 	function renderPopover($root) {
-		$root.empty().append(layoutSwitcher('popover'));
+		$root.empty();
 		var list = productions();
 		for (var i = 0; i < list.length; i++) {
 			var production = list[i];
