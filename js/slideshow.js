@@ -21,6 +21,19 @@ $slideshow = {
         this.prepareSlideshow();
     },
     
+    fitQuoteHeight: function(nextSlide) {
+        var $list = $('div.slides > ul', $slideshow.context);
+        var $slide = nextSlide ? $(nextSlide) : $list.children('li:visible').first();
+        if (!$slide.length) {
+            $slide = $list.children('li').first();
+        }
+        var height = $slide.outerHeight();
+        if (height) {
+            $list.height(height);
+            $list.parent().height(height);
+        }
+    },
+
     prepareSlideshow: function() {
         // initialise the jquery cycle plugin -
         // for information on the options set below go to: 
@@ -33,9 +46,15 @@ $slideshow = {
             pager: $('ul.slides-nav', $slideshow.context),
             pagerAnchorBuilder: $slideshow.prepareTabs,
             before: $slideshow.activateTab,
+            after: function(curr, next) {
+                $slideshow.fitQuoteHeight(next);
+            },
+            slideResize: 0,
+            containerResize: 0,
             pauseOnPagerHover: true,
             pause: true
-        });            
+        });
+        $slideshow.fitQuoteHeight();
     },
     
     prepareTabs: function(i, slide) {

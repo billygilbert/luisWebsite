@@ -212,9 +212,44 @@ audio {
 
 	.wrapper > table td[width="20"],
 	.wrapper > table td[width="20px"],
-	.wrapper > table td[width="40px"],
 	.wrapper > table td[height="20px"] {
 		display: none;
+	}
+
+	.wrapper > table tr.quote-row {
+		display: flex !important;
+		align-items: flex-start;
+		justify-content: center;
+		padding: 12px 8px 16px;
+	}
+
+	.wrapper > table tr.quote-row > td {
+		display: block !important;
+		width: auto !important;
+		text-align: center;
+	}
+
+	.wrapper > table tr.quote-row > td[width="20px"] {
+		display: none !important;
+	}
+
+	.wrapper > table tr.quote-row > td[width="40px"] {
+		flex: 0 0 48px;
+		width: 48px !important;
+		padding-top: 0;
+	}
+
+	.wrapper > table tr.quote-row > td[width="40px"] img {
+		width: 42px;
+		max-width: 42px;
+		height: auto;
+		opacity: 0.4;
+	}
+
+	.wrapper > table tr.quote-row > td[width="680px"] {
+		flex: 1 1 auto;
+		max-width: 270px;
+		width: auto !important;
 	}
 
 	.footer > table > tbody > tr:first-child,
@@ -281,30 +316,24 @@ audio {
 		margin: 0 auto 12px;
 	}
 
-	#slideshow,
-	#slideshow .slides,
-	#slideshow .slides li,
-	#slideshow .slides ul {
+	#slideshow {
 		width: 100% !important;
-		height: auto !important;
-		min-height: 0;
-	}
-
-	#slideshow.is-static .slides {
-		overflow: visible;
-		height: auto !important;
-	}
-
-	#slideshow.is-static .slides ul,
-	#slideshow.is-static .slides li {
-		float: none;
-		width: 100% !important;
-		margin-bottom: 18px;
+		margin: 0;
+		text-align: center;
 	}
 
 	#slideshow .slides {
-		font-size: 14px;
-		line-height: 1.45;
+		width: 100% !important;
+		min-height: 9em;
+		overflow: hidden;
+		font-size: 13px;
+		line-height: 1.4;
+		text-align: center;
+	}
+
+	#slideshow .slides ul,
+	#slideshow .slides li {
+		width: 100% !important;
 	}
 
 	#slideshow .slides-nav {
