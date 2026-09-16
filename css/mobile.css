@@ -94,18 +94,20 @@ audio {
 	}
 
 	.nametitle {
-		padding-right: 72px;
-		width: auto !important;
+		padding: 0;
+		width: 100% !important;
 	}
 
 	.nametitle h1 {
 		font-size: 26px;
 		line-height: 1.15;
-		text-align: left;
+		text-align: center;
 	}
 
-	.subheadertitle h2,
-	.subheadertitle h3 {
+	.subheadertitle {
+		padding-right: 64px;
+		padding-left: 64px;
+	}
 		font-size: 11px;
 		letter-spacing: 3px;
 		line-height: 1.4;
@@ -116,7 +118,7 @@ audio {
 		display: block;
 		position: absolute;
 		right: 0;
-		top: 18px;
+		top: 50px;
 		z-index: 5;
 		background: #fff;
 		border: 1px solid #000;
